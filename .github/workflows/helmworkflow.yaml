@@ -19,12 +19,12 @@ jobs:
       id: install
 
     - name: Configure AWS credentials
-        continue-on-error: false
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-region: ap-south-1
-          role-to-assume: arn:aws:iam::857312989998:role/oidc-githubactions #change-----
-          role-session-name: dev-deploy
+      continue-on-error: false
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: ap-south-1
+        role-to-assume: arn:aws:iam::857312989998:role/oidc-githubactions #change-----
+        role-session-name: dev-deploy
 
     - name: Login to Amazon ECR
       id: login-ecr
