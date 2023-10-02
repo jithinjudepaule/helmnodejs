@@ -39,8 +39,10 @@ jobs:
         REPOSITORY: devops-img
         IMAGE_TAG: latest
       run: |
+        echo ${GITHUB_WORKSPACE}
         docker build . -f Dockerfile -t $REGISTRY/$REPOSITORY:$IMAGE_TAG 
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+        echo "image=$REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Update kube config
       run: aws eks update-kubeconfig --name sample
