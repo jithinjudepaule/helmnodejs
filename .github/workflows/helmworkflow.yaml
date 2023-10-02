@@ -49,4 +49,4 @@ jobs:
     
     - name: Deploy nodejs helm chart to EKS
       run: |
-        helm install nodeapp ./
+        helm install nodeapp ./node-app-chart
