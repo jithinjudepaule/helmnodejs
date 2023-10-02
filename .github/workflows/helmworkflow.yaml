@@ -45,4 +45,4 @@ jobs:
         echo "image=$REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Update kube config
-      run: aws eks update-kubeconfig --name sample
+      run: aws eks update-kubeconfig --name helm-ekscluster
